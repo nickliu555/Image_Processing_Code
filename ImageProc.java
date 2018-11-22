@@ -26,16 +26,10 @@ public class ImageProc
 		{
 			inFile = inF;
 			outFile = outF;
-			//System.out.print( "Input  Image File Name: " );
-			//System.out.println( inFile  );
-			
-			//System.out.print( "Output Image File Name: " );
-			//System.out.println( outFile );
 			
 			bufImg0 = ImageIO.read(  new  File( inFile )  );
 			img_wid = bufImg0.getWidth ();
 			img_hgt = bufImg0.getHeight();
-			//System.out.println( "Image Width = " + img_wid + ";    Image Height = " + img_hgt + ";" );
 			rwRastr = bufImg0.getRaster();
 			pixAray = new int [ img_wid * img_hgt * 3 ];
 			int    pixIndx = 0;
@@ -62,13 +56,10 @@ public class ImageProc
 		{
 			inFile = inF;
 			outFile = "Output.jpg";
-			//System.out.print( "Input  Image File Name: " );
-			//System.out.println( inFile  );
 			
 			bufImg0 = ImageIO.read(  new  File( inFile )  );
 			img_wid = bufImg0.getWidth ();
 			img_hgt = bufImg0.getHeight();
-			//System.out.println( "Image Width = " + img_wid + ";    Image Height = " + img_hgt + ";" );
 			rwRastr = bufImg0.getRaster();
 			pixAray = new int [ img_wid * img_hgt * 3 ];
 			int    pixIndx = 0;
@@ -126,7 +117,6 @@ public class ImageProc
         WritableRaster raster = (WritableRaster) bufImage.getData();
         raster.setPixels(0,0,width,height,pixels);
         
-        // xxx begin
         Image image = null;
         
         try
@@ -141,11 +131,6 @@ public class ImageProc
 		}
         
         return image;
-        
-        // xxx end
-        //File outputfile = new File("saved.png");
-        //ImageIO.write(buffer, "png", outputfile); // Write the Buffered Image into an output file
-       // Image image  = ImageIO.read(new File("saved.png")); // Opening again as an Image  
         
     }
 	
