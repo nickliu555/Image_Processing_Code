@@ -50,10 +50,7 @@ public class ColorSharpen extends JFrame
 		
 		radioButtonHandler handler = new radioButtonHandler();
 		confirm.addActionListener(handler);
-
-
-		
-	}//end of constructor class
+	}
 	
 	private class radioButtonHandler implements ActionListener
 	{
@@ -65,9 +62,8 @@ public class ColorSharpen extends JFrame
 				{
 					ImageProc img1 = new ImageProc(inp, outp);
 					img1.redSharpen();
-					//img1.saveImg();
 					
-					ImageView j = new ImageView(img1.getOutF(), img1); // yyy
+					ImageView j = new ImageView(img1.getOutF(), img1); 
 					j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 					j.setSize(640, 400);
 					j.setVisible(true);
@@ -77,9 +73,8 @@ public class ColorSharpen extends JFrame
 				{
 					ImageProc img1 = new ImageProc(inp, outp);
 					img1.greenSharpen();
-					//img1.saveImg();
 					
-					ImageView j = new ImageView(img1.getOutF(), img1); // yyy
+					ImageView j = new ImageView(img1.getOutF(), img1); 
 					j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 					j.setSize(640, 400);
 					j.setVisible(true);
@@ -89,9 +84,8 @@ public class ColorSharpen extends JFrame
 				{
 					ImageProc img1 = new ImageProc(inp, outp);
 					img1.blueSharpen();
-					//img1.saveImg();
 					
-					ImageView j = new ImageView(img1.getOutF(), img1); // yyy
+					ImageView j = new ImageView(img1.getOutF(), img1);
 					j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 					j.setSize(640, 400);
 					j.setVisible(true);
@@ -102,9 +96,8 @@ public class ColorSharpen extends JFrame
 					ImageProc img1 = new ImageProc(inp, outp);
 					img1.blueSharpen();
 					img1.redSharpen();
-					//img1.saveImg();
 					
-					ImageView j = new ImageView(img1.getOutF(), img1); // yyy
+					ImageView j = new ImageView(img1.getOutF(), img1); 
 					j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 					j.setSize(640, 400);
 					j.setVisible(true);
@@ -115,9 +108,8 @@ public class ColorSharpen extends JFrame
 					ImageProc img1 = new ImageProc(inp, outp);
 					img1.redSharpen();
 					img1.greenSharpen();
-					//img1.saveImg();
 					
-					ImageView j = new ImageView(img1.getOutF(), img1); // yyy
+					ImageView j = new ImageView(img1.getOutF(), img1); 
 					j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 					j.setSize(640, 400);
 					j.setVisible(true);
