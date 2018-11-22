@@ -41,7 +41,6 @@ public class ImageProcGUI extends JFrame
 		add(inputLabel);
 		
 		inputText = new JTextField("");
-		//inputText.setToolTipText("Press Enter afterwards");
 		add(inputText);
 		
 		filterLabel = new JLabel("Choose a filter:");
@@ -66,10 +65,6 @@ public class ImageProcGUI extends JFrame
 		filterCombo.addActionListener(handler);
 		filterImg.addActionListener(handler);
 		
-		//filterCombo.setEnabled(false);
-		//filterImg.setEnabled(false);
-		//inputImg.setEnabled(false);
-		
 	}// end of constructor
 	
 	private class everythingHandler implements ActionListener
@@ -83,7 +78,6 @@ public class ImageProcGUI extends JFrame
 					File i = new File(inputText.getText());
 					if(i.exists()) 
 					{
-						//outputText.setEnabled( true );
 						inputImg.setEnabled(true);
 					}
 					else
@@ -99,7 +93,7 @@ public class ImageProcGUI extends JFrame
 					
 					img1 = new ImageProc(inputText.getText());
 				
-					ImageView j = new ImageView(img1.getInF(), img1); // yyy
+					ImageView j = new ImageView(img1.getInF(), img1);
 					j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 					j.setSize(640, 400);
 					j.setVisible(true);
@@ -114,7 +108,6 @@ public class ImageProcGUI extends JFrame
 			else if ((event.getSource() == filterImg))	
 			{
 				File i = new File(inputText.getText());
-				//File o = new File(outputText.getText());
 				if(i.exists()) 
 				{
 				
@@ -125,7 +118,7 @@ public class ImageProcGUI extends JFrame
 						//img1.saveImg();
 						
 					
-						ImageView j = new ImageView(img1.getOutF(), img1); // yyy
+						ImageView j = new ImageView(img1.getOutF(), img1);
 						j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 						j.setSize(640, 400);
 						j.setVisible(true);
@@ -135,9 +128,6 @@ public class ImageProcGUI extends JFrame
 					{
 						img1 = new ImageProc(inputText.getText());
 						img1.blackWhite();
-						//img1.update();
-						//img1.saveImg();
-						
 					
 						ImageView j = new ImageView(img1.getOutF(), img1); // yyy
 						j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -149,10 +139,8 @@ public class ImageProcGUI extends JFrame
 					{
 						img1 = new ImageProc(inputText.getText());
 						img1.bright();
-						//img1.update();
-						//img1.saveImg();
 					
-						ImageView j = new ImageView(img1.getOutF(), img1); // yyy
+						ImageView j = new ImageView(img1.getOutF(), img1);
 						j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 						j.setSize(640, 400);
 						j.setVisible(true);
