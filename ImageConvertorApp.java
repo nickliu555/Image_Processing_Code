@@ -1,10 +1,10 @@
 
 
-import java.awt.*;				// MUST for Image
+import java.awt.*;				
 
-import javax.swing.*;			// MUST for JFrame , but NOT necessary for Frame
+import javax.swing.*;			
 
-import java.util.*;				// for Scanner (nextLine) 
+import java.util.*;				
 import java.io.File;
 import java.awt.image.*;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class ImageConvertorApp
 	
 	public void Read_Process_Write_Image( String inFile, String outFile )
 	{
-		try // the 'try ...... catch' structure seems to be a MUST for file I/O
+		try 
 		{
 			// confirm the input and output file names
 			System.out.print( "Input  Image File Name: " );
