@@ -53,14 +53,12 @@ public class ImageView extends JFrame
 	    add(box);
 	    
 	    label.addMouseListener( new RightClicker() );
-	    //label.addMouseListener(new PopClickListener());
 	    
 	    pressHandler handler = new pressHandler();
 	    save = new JMenuItem("Save Image");
 	    save.addActionListener(handler);
 	    
 	    menu.add(save);
-	    //menu.setVisible(true);
 	}
 	
 	
@@ -73,7 +71,6 @@ public class ImageView extends JFrame
         {
             if ( e.isMetaDown() ) 
             {
-                //System.out.println( "Right Button Pressed" );
                 menu.setVisible(true);
                 menu.add(save);
                 menu.show(e.getComponent(), e.getX(), e.getY());
