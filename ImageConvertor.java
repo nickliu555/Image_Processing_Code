@@ -1,8 +1,8 @@
-import java.awt.*;							// MUST for Image
+import java.awt.*;							
 import java.awt.Component;
-import java.awt.image.*;					// NOT necessary for Image
+import java.awt.image.*;					
 import java.awt.image.MemoryImageSource;
-import javax.swing.JButton;					// for JButton (actually for calling method createImage
+import javax.swing.JButton;					
 
 
 public class ImageConvertor
@@ -13,7 +13,6 @@ public class ImageConvertor
 	// transparency) pixels.
 	//
 	// RAP: Raw Array of Pixels
-	//
 	static int [] getRAP( int img_wid, int img_hgt, int [] rgb_ary, int [] alphAry )
 	{
 		// allocate an array for int-based 4-component pixels: to be filled in
@@ -38,7 +37,6 @@ public class ImageConvertor
 	// red, green, blue) pixels.
 	//
 	// RAP: Raw Array of Pixels
-	//
 	static int [] getRAP( int img_wid, int img_hgt, int [] rgb_ary )
 	{
 		// allocate an array for int-based 4-component pixels: to be filled in
@@ -64,9 +62,6 @@ public class ImageConvertor
 	//
 	// FAP: one int (with 4 unsigned bytes) for each pixel
 	//      where the 4 (unsigned) bytes, in order, refer to alpha, red, green, and blue
-	// 
-	// FAP is the internal format used by Java for an in-memory array of pixels
-	//
 	static int [] RAP2FAP( int img_wid, int img_hgt, int [] rgbaRAP )
 	{
 		int [] fapAray = new int[ img_wid * img_hgt ];
@@ -90,9 +85,6 @@ public class ImageConvertor
 	//
 	// FAP: one int (with 4 unsigned bytes) for each pixel
 	//      where the 4 (unsigned) bytes, in order, refer to alpha, red, green, and blue
-	// 
-	// FAP is the internal format used by Java for an in-memory array of pixels
-	//
 	static int [] FAP2RAP( int img_wid, int img_hgt, int [] fapAray )
 	{
 		// allocate an array for int-based 4-component pixels: to be filled in
@@ -116,9 +108,6 @@ public class ImageConvertor
 	//
 	// FAP: one int (with 4 unsigned bytes) for each pixel
 	//      where the 4 (unsigned) bytes, in order, refer to alpha, red, green, and blue
-	// 
-	// FAP is the internal format used by Java for an in-memory array of pixels
-	//
 	static int [] FAP2RAP_RGB( int img_wid, int img_hgt, int [] fapAray )
 	{
 		// allocate an array for int-based 3-component pixels: to be filled in
@@ -139,18 +128,12 @@ public class ImageConvertor
 	// create and return an object of type Image from an Formatted Array pf Pixels
 	// FAP: one int (with 4 unsigned bytes) for each pixel
 	//      where the 4 (unsigned) bytes, in order, refer to alpha, red, green, and blue
-	// 
-	// FAP is the internal format used by Java for an in-memory array of pixels
-	//
 	static Image createImage( int img_wid, int img_hgt, int [] fapAray )
 	{
 		MemoryImageSource mem_img = new MemoryImageSource
 									    ( img_wid, img_hgt, fapAray, 0, img_wid );
 		
-		// Component is an ABSTRACT class and hence can NOT be directly used to call
-		// method createImage. Thus, a non-abstract sub-class of Component needs to 
-		// be created below in a way to call this method
-		//
+		
 		JButton  butnObj = new JButton();
 		return   butnObj.createImage( mem_img );
 	}
